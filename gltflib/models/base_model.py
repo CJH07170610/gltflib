@@ -2,9 +2,8 @@ from dataclasses import dataclass
 from dataclasses_json import dataclass_json
 from typing import Optional, Dict, Any
 
-
-@dataclass
 @dataclass_json
+@dataclass
 class BaseModel:
     """
     Base model for all GLTF2 models

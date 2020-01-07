@@ -2,9 +2,8 @@ from dataclasses import dataclass
 from dataclasses_json import dataclass_json
 from .base_model import BaseModel
 
-
-@dataclass
 @dataclass_json
+@dataclass
 class SparseIndices(BaseModel):
     """
     Indices of those attributes that deviate from their initialization value.

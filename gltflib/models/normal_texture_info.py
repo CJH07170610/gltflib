@@ -3,9 +3,8 @@ from dataclasses_json import dataclass_json
 from typing import Optional
 from .texture_info import TextureInfo
 
-
-@dataclass
 @dataclass_json
+@dataclass
 class NormalTextureInfo(TextureInfo):
     """
     Material Normal Texture Info

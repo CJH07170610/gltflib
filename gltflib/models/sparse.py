@@ -4,9 +4,8 @@ from .base_model import BaseModel
 from .sparse_indices import SparseIndices
 from .sparse_values import SparseValues
 
-
-@dataclass
 @dataclass_json
+@dataclass
 class Sparse(BaseModel):
     """
     Sparse storage of attributes that deviate from their initialization value.

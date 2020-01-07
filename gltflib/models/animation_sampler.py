@@ -3,9 +3,8 @@ from dataclasses_json import dataclass_json
 from typing import Optional
 from .base_model import BaseModel
 
-
-@dataclass
 @dataclass_json
+@dataclass
 class AnimationSampler(BaseModel):
     """
     Combines input and output accessors with an interpolation algorithm to define a keyframe graph (but not its target).
