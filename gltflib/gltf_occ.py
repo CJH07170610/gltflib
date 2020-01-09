@@ -1,9 +1,10 @@
 import struct
 import operator
-from gltflib import (
+from . import (
     GLTF, GLTFModel, Asset, Scene, Node, Mesh, Primitive, Attributes, Buffer, BufferView, Accessor, AccessorType,
     BufferTarget, ComponentType, Base64Resource, GLBResource, FileResource)
-
+from .utils import del_none
+from dataclasses import asdict
 class GltfExporter:
 
     def __init__(self):
@@ -123,6 +124,6 @@ class GltfExporter:
         self._AddDefaultScene()
         gltf = GLTF(model=self.model, resources=self.resources)
         gltf.export(filename)
-    def ToJson(self):
+    def ToDict(self):
         self._AddDefaultScene()
-        return self.model.to_json()
+        return del_none(asdict(self.model))
