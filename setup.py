@@ -88,6 +88,7 @@ setup(
     extras_require=EXTRAS,
     include_package_data=True,
     license='MIT',
+    zip_safe=False,
     classifiers=[
         # Trove classifiers
         # Full list: https://pypi.python.org/pypi?%3Aaction=list_classifiers
