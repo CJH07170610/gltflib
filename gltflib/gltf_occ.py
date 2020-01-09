@@ -114,11 +114,15 @@ class GltfExporter:
         node.mesh=meshid
         self.model.nodes.append(node)
         return node
-
-    def Save(self, filename):
+    def _AddDefaultScene(self):
         if len(self.model.scenes)==0:
             scene=Scene(name="Root",nodes=[i for i in range(0,len(self.model.nodes))])
             self.model.scenes.append(scene)
             self.model.scene=0
+    def Save(self, filename):
+        self._AddDefaultScene()
         gltf = GLTF(model=self.model, resources=self.resources)
         gltf.export(filename)
+    def ToJson(self):
+        self._AddDefaultScene()
+        return self.model.to_json()
